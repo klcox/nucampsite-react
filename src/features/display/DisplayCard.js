@@ -1,4 +1,4 @@
-import { Card, CardImg, CardText, CardBody, CardTitle } from "reactstrap";
+import {Card, CardImg, CardBody, CardTitle, CardText} from "reactstrap";
 
 const DisplayCard = ({ item }) => {
     const { image, name, description } = item;
