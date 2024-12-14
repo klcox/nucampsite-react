@@ -1,28 +1,14 @@
-import {useState} from "react";
-import {Container, Row, Col} from "reactstrap";
-import CampsiteDetail from "../features/campsites/CampsiteDetail";
+import {Container} from "reactstrap";
 import CampsiteList from "../features/campsites/CampsiteList";
-import {selectCampsiteById} from "../features/campsites/campsitesSlice";
+import SubHeader from "../components/SubHeader";
 
-const CampsiteDirectoryPage = () => {
-    const [campsiteId, setCampsiteId] = useState(0);
-    const selectedCampsite = selectCampsiteById(campsiteId);
-
+const CampsiteDirectoryPage = () => {   
     return (
-        <Container>           
-            <Row>
-                <Col sm="5" md="7">
-                    <CampsiteList setCampsiteId={setCampsiteId}/>                   
-                </Col>
-
-                <Col sm="7" md="5">
-                    <CampsiteDetail campsite={selectedCampsite} />
-                </Col>
-            </Row>
+        <Container>       
+            <SubHeader current="Directory" />
+            <CampsiteList /> 
         </Container>
     );
-
-
 };
 
 export default CampsiteDirectoryPage;
